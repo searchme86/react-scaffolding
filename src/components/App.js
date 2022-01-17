@@ -2,6 +2,9 @@ import { Route, Routes } from "react-router-dom";
 import { createGlobalStyle } from "styled-components";
 import Login from "components/pages/Login";
 import Home from "components/pages/Home";
+import Customer from "components/pages/Customer";
+import Faq from "components/pages/Faq";
+
 const GlobalStyle = createGlobalStyle`
   body{
     background:#fff;
@@ -17,8 +20,10 @@ function App() {
     <>
       <GlobalStyle />
       <Routes>
-        <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/customer" element={<Customer />} />
+        <Route path="/faq" element={<Faq />} />
       </Routes>
     </>
   );

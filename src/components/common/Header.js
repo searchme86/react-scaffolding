@@ -39,28 +39,26 @@ const Item = styled.li`
   }
 `;
 
-const Actived = {
-  fontSize: 15,
-  color: "red",
-  background: "yellow",
-};
-
 const MenuList = [
   {
     index: 1,
-    text: "메뉴1",
+    text: "홈",
+    LinkTo: "/",
   },
   {
     index: 2,
-    text: "메뉴1",
+    text: "고객",
+    LinkTo: "/customer",
   },
   {
     index: 3,
-    text: "메뉴3",
+    text: "문의사항",
+    LinkTo: "/faq",
   },
   {
     index: 4,
-    text: "메뉴4",
+    text: "로그인",
+    LinkTo: "/login",
   },
 ];
 
@@ -81,8 +79,11 @@ export function Header() {
             return (
               <NavItem key={item.index}>
                 <NavLink
-                  to="/"
-                  style={({ isActive }) => (isActive ? Actived : undefined)}
+                  to={item.LinkTo}
+                  style={({ isActive }) => ({
+                    color: isActive ? "#fff" : "#545e6f",
+                    background: isActive ? "#7600dc" : "#f0f0f0",
+                  })}
                 >
                   {item.text}
                 </NavLink>
