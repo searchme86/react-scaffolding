@@ -45,6 +45,25 @@ const Actived = {
   background: "yellow",
 };
 
+const MenuList = [
+  {
+    index: 1,
+    text: "메뉴1",
+  },
+  {
+    index: 2,
+    text: "메뉴1",
+  },
+  {
+    index: 3,
+    text: "메뉴3",
+  },
+  {
+    index: 4,
+    text: "메뉴4",
+  },
+];
+
 function NavList({ children }) {
   return <List>{children}</List>;
 }
@@ -58,22 +77,18 @@ export function Header() {
     <HeaderWrapper>
       <Menu>
         <NavList>
-          <NavItem>
-            <NavLink
-              to="/"
-              style={({ isActive }) => (isActive ? Actived : undefined)}
-            >
-              Home
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink
-              to="/login"
-              style={({ isActive }) => (isActive ? Actived : undefined)}
-            >
-              Login
-            </NavLink>
-          </NavItem>
+          {MenuList.map((item) => {
+            return (
+              <NavItem key={item.index}>
+                <NavLink
+                  to="/"
+                  style={({ isActive }) => (isActive ? Actived : undefined)}
+                >
+                  {item.text}
+                </NavLink>
+              </NavItem>
+            );
+          })}
         </NavList>
       </Menu>
     </HeaderWrapper>
