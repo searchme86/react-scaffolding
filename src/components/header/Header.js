@@ -5,8 +5,6 @@ import { NavLink } from "react-router-dom";
 const HeaderWrapper = styled.header`
   position: relative;
   width: 100%;
-  height: 60px;
-  top: 0;
   box-sizing: border-box;
   background: linear-gradient(to right, #f8049c, #fdd54f);
   border-bottom: 3px solid #fdd54f;
@@ -52,7 +50,6 @@ const Menu = styled.nav`
     position: relative;
     width: initial;
     border-bottom: none;
-    margin: auto 0 auto auto;
   }
 `;
 
@@ -71,9 +68,6 @@ const Item = styled.li`
   margin-right: 5px;
   &:last-child {
     margin-right: 0;
-  }
-  @media (max-width: 768px) {
-    margin-top: 5px;
   }
 `;
 
@@ -125,7 +119,10 @@ function Header() {
                   to={item.LinkTo}
                   style={({ isActive }) => ({
                     color: isActive ? "#fff" : "#545e6f",
-                    background: isActive ? "#7600dc" : "#f0f0f0",
+                    // background: isActive ? "#7600dc" : "#f0f0f0",
+                    borderBottom: isActive
+                      ? "3px solid rgb(212, 212, 212)"
+                      : "undefined",
                   })}
                 >
                   {item.text}

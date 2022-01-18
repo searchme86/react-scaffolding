@@ -1,10 +1,16 @@
 import React from "react";
 import SubHome from "./SubHome";
+import styled from "styled-components";
+
+const Title = styled.h1`
+  margin: 0;
+  padding: 0;
+`;
 
 const Home = () => {
   return (
     <div>
-      <h1>Home 페이지 입니다</h1>
+      <Title>Home 입니다</Title>
       <SubHome />
     </div>
   );

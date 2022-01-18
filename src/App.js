@@ -8,10 +8,6 @@ import Layout from "components/Layout";
 
 const GlobalStyle = createGlobalStyle`
   body{
-    background:#fff;
-    min-height: 100vh;
-    margin:0;
-    font-family: sans-serif;
     margin:0;
     padding:0;
   }

@@ -2,13 +2,18 @@ import React from "react";
 import styled from "styled-components";
 
 const SubCtnFaq = styled.div`
-  padding: 10px;
+  margin: 10px 0 0 0;
+`;
+
+const Title = styled.h1`
+  margin: 0;
+  padding: 0;
 `;
 
 const SubFaq = () => {
   return (
     <SubCtnFaq>
-      <h1>Faq의 sub 페이지 입니다</h1>
+      <Title>Faq의 sub 페이지 입니다</Title>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
       perspiciatis consequuntur temporibus ad quas fugiat enim velit? Libero
       eos, sit asperiores harum nisi quod animi temporibus perferendis rem ex

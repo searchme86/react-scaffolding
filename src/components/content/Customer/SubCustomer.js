@@ -2,13 +2,18 @@ import React from "react";
 import styled from "styled-components";
 
 const SubCustomerContent = styled.div`
-  padding: 10px;
+  margin: 10px 0 0 0;
+`;
+
+const Title = styled.h1`
+  margin: 0;
+  padding: 0;
 `;
 
 const SubCustomer = () => {
   return (
     <SubCustomerContent>
-      <h1>Customer의 sub 페이지 입니다</h1>
+      <Title>Customer의 sub 페이지 입니다</Title>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque beatae
       deleniti optio dolorem soluta quae temporibus ratione, ut debitis maiores
       quidem sed tempora consectetur labore explicabo perspiciatis quaerat,
