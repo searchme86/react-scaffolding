@@ -5,7 +5,7 @@ const SubHomeContent = styled.div`
   padding: 10px;
 `;
 
-function SubHome() {
+const SubHome = () => {
   return (
     <SubHomeContent>
       <h1>Home의 sub 페이지 입니다</h1>
@@ -24,6 +24,6 @@ function SubHome() {
       maiores perspiciatis ipsam, hic quis! Provident.
     </SubHomeContent>
   );
-}
+};
 
 export default SubHome;

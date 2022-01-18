@@ -5,7 +5,7 @@ const SubCustomerContent = styled.div`
   padding: 10px;
 `;
 
-function SubCustomer() {
+const SubCustomer = () => {
   return (
     <SubCustomerContent>
       <h1>Customer의 sub 페이지 입니다</h1>
@@ -24,6 +24,6 @@ function SubCustomer() {
       maiores perspiciatis ipsam, hic quis! Provident.
     </SubCustomerContent>
   );
-}
+};
 
 export default SubCustomer;
