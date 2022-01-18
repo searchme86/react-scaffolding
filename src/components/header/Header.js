@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import { MenuList, ActiveStyle } from "./HeaderData";
+import NavList from "./NavList";
+import NavLi from "./NavLi";
+import Nav from "./Nav";
 
 const HeaderWrapper = styled.header`
   position: relative;
@@ -31,83 +35,6 @@ const MobileMenuIcon = styled.div`
   }
 `;
 
-const Menu = styled.nav`
-  display: block;
-  font-family: "Times New Roman", Times, serif;
-  position: absolute;
-  width: 100%;
-  top: 60px;
-  left: 0;
-  padding: 8px;
-  box-sizing: border-box;
-  border-bottom: 3px solid #fdd54f;
-  background: white;
-
-  @media (min-width: 768px) {
-    background: none;
-    left: initial;
-    top: initial;
-    position: relative;
-    width: initial;
-    border-bottom: none;
-  }
-`;
-
-const List = styled.ul`
-  display: flex;
-  margin: 0;
-  padding: 0;
-  @media (max-width: 768px) {
-    display: block;
-    text-align: center;
-  }
-`;
-
-const Item = styled.li`
-  list-style-type: none;
-  margin-right: 5px;
-  &:last-child {
-    margin-right: 0;
-  }
-`;
-
-const MenuList = [
-  {
-    index: 1,
-    text: "홈",
-    LinkTo: "/",
-  },
-  {
-    index: 2,
-    text: "고객",
-    LinkTo: "/customer",
-  },
-  {
-    index: 3,
-    text: "문의사항",
-    LinkTo: "/faq",
-  },
-  {
-    index: 4,
-    text: "로그인",
-    LinkTo: "/login",
-  },
-];
-
-const ActiveStyle = {
-  color: "#545e6f",
-  background: "#7600dc",
-  borderBottom: "3px solid rgb(212, 212, 212)",
-};
-
-function NavList({ children }) {
-  return <List>{children}</List>;
-}
-
-function NavItem({ children }) {
-  return <Item>{children}</Item>;
-}
-
 function Header() {
   return (
     <HeaderWrapper>
@@ -116,29 +43,22 @@ function Header() {
         <span />
         <span />
       </MobileMenuIcon>
-      <Menu>
+      <Nav>
         <NavList>
           {MenuList.map((item) => {
             return (
-              <NavItem key={item.index}>
+              <NavLi key={item.index}>
                 <NavLink
                   to={item.LinkTo}
                   style={({ isActive }) => (isActive ? ActiveStyle : undefined)}
-                  // style={({ isActive }) => ({
-                  //   color: isActive ? "#fff" : "#545e6f",
-                  //   // background: isActive ? "#7600dc" : "#f0f0f0",
-                  //   borderBottom: isActive
-                  //     ? "3px solid rgb(212, 212, 212)"
-                  //     : "undefined",
-                  // })}
                 >
                   {item.text}
                 </NavLink>
-              </NavItem>
+              </NavLi>
             );
           })}
         </NavList>
-      </Menu>
+      </Nav>
     </HeaderWrapper>
   );
 }
