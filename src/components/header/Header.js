@@ -94,6 +94,12 @@ const MenuList = [
   },
 ];
 
+const ActiveStyle = {
+  color: "#545e6f",
+  background: "#7600dc",
+  borderBottom: "3px solid rgb(212, 212, 212)",
+};
+
 function NavList({ children }) {
   return <List>{children}</List>;
 }
@@ -117,13 +123,14 @@ function Header() {
               <NavItem key={item.index}>
                 <NavLink
                   to={item.LinkTo}
-                  style={({ isActive }) => ({
-                    color: isActive ? "#fff" : "#545e6f",
-                    // background: isActive ? "#7600dc" : "#f0f0f0",
-                    borderBottom: isActive
-                      ? "3px solid rgb(212, 212, 212)"
-                      : "undefined",
-                  })}
+                  style={({ isActive }) => (isActive ? ActiveStyle : undefined)}
+                  // style={({ isActive }) => ({
+                  //   color: isActive ? "#fff" : "#545e6f",
+                  //   // background: isActive ? "#7600dc" : "#f0f0f0",
+                  //   borderBottom: isActive
+                  //     ? "3px solid rgb(212, 212, 212)"
+                  //     : "undefined",
+                  // })}
                 >
                   {item.text}
                 </NavLink>
