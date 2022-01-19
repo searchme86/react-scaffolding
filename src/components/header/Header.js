@@ -9,9 +9,15 @@ import Nav from "./Nav";
 const HeaderWrapper = styled.header`
   position: relative;
   width: 100%;
+  height: 40px;
   box-sizing: border-box;
   background: linear-gradient(to right, #f8049c, #fdd54f);
   border-bottom: 3px solid #fdd54f;
+
+  @media (max-width: 768px) {
+    border-bottom: none;
+    background: none;
+  }
 `;
 
 const MobileMenuIcon = styled.div`
@@ -24,6 +30,7 @@ const MobileMenuIcon = styled.div`
     top: 10px;
     right: 10px;
     width: 25px;
+    z-index: 1;
 
     > span {
       display: block;

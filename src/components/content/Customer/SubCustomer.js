@@ -2,7 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 const SubCustomerContent = styled.div`
-  margin: 10px 0 0 0;
+  margin: 10px 0 0 10px;
+  @media (max-width: 768px) {
+    margin: 10px 0 0 10px;
+  }
 `;
 
 const Title = styled.h1`
