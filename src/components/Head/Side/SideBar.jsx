@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import RightNav from "./RightNav";
 import Hambutton from "./Hambutton";
 import styled from "styled-components";
@@ -12,18 +12,20 @@ const Menubar = styled.nav`
   justify-content: space-between;
 `;
 
-const Menu = () => {
-  const [open, setOpen] = useState(false);
-  const show = () => {
-    setOpen((open) => !open);
-  };
+const SideBar = ({ open, handler }) => {
+  // const [open, setOpen] = useState(false);
+  // const show = () => {
+  //   setOpen((open) => !open);
+  // };
 
   return (
     <Menubar>
-      <Hambutton open={open} handler={show} />
+      {/* <Hambutton more={open} hmore={handler} />
+      <RightNav open={open} /> */}
+      <Hambutton more={open} hmore={handler} />
       <RightNav open={open} />
     </Menubar>
   );
 };
 
-export default Menu;
+export default SideBar;

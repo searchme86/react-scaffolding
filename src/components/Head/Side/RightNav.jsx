@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { MenuList, ActiveStyle } from "../HeaderData";
+import { NavLink } from "react-router-dom";
 
 const Ul = styled.ul`
   list-style: none;
@@ -28,11 +30,24 @@ const Ul = styled.ul`
 const RightNav = ({ open }) => {
   return (
     <Ul open={open}>
-      <li>Home</li>
+      {MenuList.map((item) => {
+        return (
+          <li key="item.index">
+            <NavLink
+              to={item.LinkTo}
+              style={({ isActive }) => (isActive ? ActiveStyle : undefined)}
+            >
+              {item.text}
+            </NavLink>
+          </li>
+        );
+      })}
+
+      {/* <li>Home</li>
       <li>About Us</li>
       <li>Contact Us</li>
       <li>Sign In</li>
-      <li>Sign Up</li>
+      <li>Sign Up</li> */}
     </Ul>
   );
 };

@@ -35,9 +35,9 @@ const Styledbar = styled.div`
   }
 `;
 
-const Hambutton = ({ open, handler }) => {
+const Hambutton = ({ more, hmore }) => {
   return (
-    <Styledbar open={open} onClick={handler} role="button">
+    <Styledbar open={more} onClick={hmore} role="button">
       <span />
       <span />
       <span />

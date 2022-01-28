@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import { MenuList, ActiveStyle } from ".HeaderData";
+import { MenuList, ActiveStyle } from "./HeaderData";
 import NavList from "./Menu/NavList";
 import NavLi from "./Menu/NavLi";
 import Nav from "./Menu/Nav";
+import SideBar from "./Side/SideBar";
 
 const HeaderWrapper = styled.header`
   position: relative;
@@ -20,37 +21,17 @@ const HeaderWrapper = styled.header`
   }
 `;
 
-const MobileMenuIcon = styled.div`
-  display: none;
-  @media (max-width: 768px) {
-    display: block;
-    position: absolute;
-    min-width: 25px;
-    margin: 5px;
-    top: 10px;
-    right: 10px;
-    width: 25px;
-    z-index: 1;
-
-    > span {
-      display: block;
-      width: 100%;
-      height: 3px;
-      margin: 5px 0 5px 0;
-      background: black;
-    }
-  }
-`;
-
 function Header() {
+  const [open, setOpen] = useState(false);
+  const show = () => {
+    setOpen((open) => !open);
+  };
+
   return (
     <HeaderWrapper>
-      <MobileMenuIcon onClick={ControlMenu}>
-        <span />
-        <span />
-        <span />
-      </MobileMenuIcon>
-      <Nav open={menuOpen}>
+      <SideBar open={open} handler={show} />
+
+      <Nav>
         <NavList>
           {MenuList.map((item) => {
             return (
