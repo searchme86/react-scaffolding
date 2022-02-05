@@ -1,18 +1,7 @@
-import Navbar from "Components/Navbar";
-import Planet from "Components/Planet";
-import { useState } from "react/cjs/react.development";
-import People from "./Components/People";
-
 function App() {
-  const [page, setPage] = useState("planets");
-
   return (
     <>
-      <h1>Star Wars Info</h1>
-      <Navbar setPage={setPage} />
-      <div className="content">
-        {page === "planets" ? <Planet /> : <People />}
-      </div>
+      <h1>ssdddds</h1>
     </>
   );
 }
