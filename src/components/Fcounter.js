@@ -1,8 +1,8 @@
 import React from "react";
 
-function Counter({ number, diff, onIncrease, onDecrease, onSetDiff }) {
-  const onChange = (e) => {
-    onSetDiff(parseInt(e.target.value, 10));
+function Fcounter({ number, diff, onIncrease, onDecrease, onSetDiff }) {
+  const onChange = (event) => {
+    onSetDiff(parseInt(event.target.value, 10));
   };
   return (
     <div>
@@ -16,4 +16,4 @@ function Counter({ number, diff, onIncrease, onDecrease, onSetDiff }) {
   );
 }
 
-export default Counter;
+export default Fcounter;
