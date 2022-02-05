@@ -1,21 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
 import "./index.css";
-import { createStore } from "@reduxjs/toolkit";
-import rootReducer from "./modules/index";
+import App from "./App";
+import { createStore } from "redux";
 import { Provider } from "react-redux";
-import { composeWithDevTools } from "redux-devtools-extension";
+import rootReducer from "./modules";
 
-const store = createStore(rootReducer, composeWithDevTools);
-console.log(store);
-console.log(store.getState());
+const store = createStore(rootReducer); // 스토어를 만듭니다.
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById("root")
 );
