@@ -11,6 +11,14 @@ export const decrease = () => ({
 
 const initialState = 0;
 
+export const increaseAsync = () => (disaptch) => {
+  setTimeout(() => disaptch(increase()), 1000);
+};
+
+export const decreaseAsync = () => (dispatch) => {
+  setTimeout(() => dispatch(decrease()), 1000);
+};
+
 export default function counter(state = initialState, action) {
   switch (action.type) {
     case INCREASE:
