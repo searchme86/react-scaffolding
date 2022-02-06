@@ -1,33 +1,9 @@
-import { Route, Routes } from "react-router-dom";
-import { createGlobalStyle } from "styled-components";
-import Customer from "components/content/Customer/Customer";
-import Faq from "components/content/Faq/Faq";
-import Home from "components/content/Home/Home";
-import Login from "components/content/Login/Login";
-import Layout from "components/Layout";
-
-const GlobalStyle = createGlobalStyle`
-  body{
-    margin:0;
-    padding:0;
-  }
-  a{
-    text-decoration: none;
-  }
-`;
+import CounterContainer from "containers/CounterContainer";
 
 function App() {
   return (
     <>
-      <GlobalStyle />
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/customer" element={<Customer />} />
-          <Route path="/faq" element={<Faq />} />
-        </Route>
-      </Routes>
+      <CounterContainer />
     </>
   );
 }
