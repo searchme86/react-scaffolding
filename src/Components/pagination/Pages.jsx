@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 import { useQuery } from "react-query";
-import { fetchPost } from "../../Server/Fetcher";
+// import { fetchPost } from "../../Server/Fetcher";
+import { fetchPage } from "../../Server/Fetcher";
 import PageDetail from "./PageDetail";
 
 function Pages() {
   const maxPostPage = 10;
   const [selected, setSelected] = useState(null);
-  const [currentPage, setCurrentPage] = useState(0);
-  const { isLoading, isError, data, error } = useQuery("posts", fetchPost);
+  const [currentPage, setCurrentPage] = useState(1);
+  // const { isLoading, isError, data, error } = useQuery("posts", fetchPost);
+  const { isLoading, isError, error, data } = useQuery(
+    ["post", currentPage],
+    () => fetchPage(currentPage)
+  );
+
   if (isLoading)
     return <p>현재 로딩 중입니다, 데이터를 가지고 오고 있습니다.</p>;
   if (!data) return <div />;
@@ -25,11 +31,21 @@ function Pages() {
             ))}
           </ul>
           <div className="pages-buttons">
-            <button disabled onClick={() => {}}>
+            <button
+              disabled={currentPage <= 1}
+              onClick={() => {
+                setCurrentPage((prev) => prev - 1);
+              }}
+            >
               Previous page
             </button>
-            <span className="middle">Page {currentPage + 1}</span>
-            <button disabled onClick={() => {}}>
+            <span className="middle">Page {currentPage}</span>
+            <button
+              disabled={currentPage >= maxPostPage}
+              onClick={() => {
+                setCurrentPage((prev) => prev + 1);
+              }}
+            >
               Next page
             </button>
           </div>

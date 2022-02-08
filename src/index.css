@@ -14,6 +14,7 @@ body {
 }
 li {
   cursor: pointer;
+  display: flex;
 }
 h1,
 h2,
@@ -62,4 +63,14 @@ button:hover {
 
 .click-item {
   margin-bottom: 20px;
+}
+
+.li-title,
+.li-content {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.li-title {
+  margin-right: 10px;
 }

@@ -14,6 +14,15 @@ export const fetchComments = async (postId) => {
   return response;
 };
 
+export const fetchPage = async (pageNum) => {
+  const response = await (
+    await fetch(
+      `https://jsonplaceholder.typicode.com/posts?_limit=10&_page=${pageNum}`
+    )
+  ).json();
+  return response;
+};
+
 export const deletePost = async (postId) => {
   const response = await (
     await fetch(`https://jsonplaceholder.typicode.com/postId/${postId}`, {

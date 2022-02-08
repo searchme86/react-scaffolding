@@ -3,9 +3,15 @@ import { useQuery } from "react-query";
 import { fetchComments } from "../../Server/Fetcher";
 
 function PageDetail({ post }) {
-  const { isLoading, isError, error, data } = useQuery("comments", () =>
-    fetchComments(post.id)
+  // const { isLoading, isError, error, data } = useQuery("comments", () =>
+  //   fetchComments(post.id)
+  // );
+
+  const { isLoading, isError, error, data } = useQuery(
+    ["comments", post.id],
+    () => fetchComments(post.id)
   );
+
   if (!data) return <div />;
   if (isLoading)
     return <p>현재 로딩 중입니다, 데이터를 가지고 오고 있습니다.</p>;
@@ -27,7 +33,8 @@ function PageDetail({ post }) {
             <ul className="comment-list">
               {data.map((comment) => (
                 <li key={comment.id}>
-                  {comment.demial}:{comment.body}
+                  <strong className="li-title">{comment.email}:</strong>
+                  <span className="li-content">{comment.body}</span>
                 </li>
               ))}
             </ul>
