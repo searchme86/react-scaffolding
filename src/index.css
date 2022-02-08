@@ -9,6 +9,9 @@ body {
   width: 960px;
   margin: 0 auto;
 }
+.content {
+  text-align: left;
+}
 li {
   cursor: pointer;
 }
@@ -19,6 +22,11 @@ h4 {
   color: #ffff57;
   font-size: 4em;
   letter-spacing: 2px;
+}
+.title {
+  text-align: left;
+  margin-bottom: 10px;
+  border-bottom: 1px solid;
 }
 button {
   margin: 0 10px;
@@ -34,11 +42,24 @@ button:hover {
   color: #fff;
   border-color: #fff;
 }
-.content {
-  text-align: left;
-}
+
 .post-title {
   color: pink;
   font-size: 30px;
   margin: 10px 0;
+}
+.pages-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0 20px 0;
+}
+
+.middle {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 20px;
+}
+
+.click-item {
+  margin-bottom: 20px;
 }

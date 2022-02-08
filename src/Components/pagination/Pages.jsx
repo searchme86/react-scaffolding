@@ -13,21 +13,22 @@ function Pages() {
   if (!data) return <div />;
 
   return (
-    <div>
+    <>
       {!isError ? (
-        <div>
+        <div className="content">
+          <strong>아래 문장을 클릭해보세요</strong>
           <ul>
             {data.map((post) => (
               <li key={post.id} onClick={() => setSelected(post)}>
-                {post.title}
+                {post.id} : {post.title}
               </li>
             ))}
           </ul>
-          <div className="pages">
+          <div className="pages-buttons">
             <button disabled onClick={() => {}}>
               Previous page
             </button>
-            <span>Page {currentPage + 1}</span>
+            <span className="middle">Page {currentPage + 1}</span>
             <button disabled onClick={() => {}}>
               Next page
             </button>
@@ -35,12 +36,12 @@ function Pages() {
           {selected && <PageDetail post={selected} />}
         </div>
       ) : (
-        <div>
-          <h2>에러가 발생했습니다!</h2>
-          <p>{error}</p>
+        <div className="pages-error-area">
+          <strong className="error-title">에러가 발생했습니다!</strong>
+          <p class="error-content">{error}</p>
         </div>
       )}
-    </div>
+    </>
   );
 }
 

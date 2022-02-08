@@ -15,10 +15,11 @@ function Item() {
   if (isLoading) return <h1>로딩중입니다..</h1>;
 
   return (
-    <div>
+    <>
       {!isError ? (
-        <>
-          <ul>
+        <div className="content">
+          <strong>아래 문장을 클릭해보세요</strong>
+          <ul className="click-item">
             {data.map((post) => (
               <li key={post.id} onClick={() => setSelectedPost(post)}>
                 {post.title}
@@ -26,14 +27,14 @@ function Item() {
             ))}
           </ul>
           {selectedPost && <ItemDetail post={selectedPost} />}
-        </>
+        </div>
       ) : (
         <div>
           <h2>에러가 발생했습니다!</h2>
           <p>{error}</p>
         </div>
       )}
-    </div>
+    </>
   );
 }
 
