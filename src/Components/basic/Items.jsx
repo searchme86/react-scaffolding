@@ -11,7 +11,7 @@ function Item() {
   const { isLoading, isError, error, data } = useQuery("posts", fetchPost, {
     staleTime: 200,
   });
-  //   if (!data) return <div />;
+  if (!data) return <div />;
   if (isLoading) return <h1>로딩중입니다..</h1>;
 
   return (
