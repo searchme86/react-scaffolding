@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
+import { useState } from "react";
+import { useUserContext } from "./context/UserContextProvider";
 
-function App(){
-  return(
-    <div>
-      <h1>Hello React</h1>
-    </div>
-  )
+function App() {
+  const { loading, error, user } = useUserContext();
+
+  return <div>{error && <p className="error"></p>}</div>;
 }
 
 export default App;
