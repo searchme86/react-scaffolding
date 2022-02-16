@@ -1,9 +1,14 @@
-function App() {
+import React from "react";
+import Nav from "./components/Nav.jsx";
+import Navigate from "./Navigate";
+
+const App = () => {
   return (
-    <div>
-      <h1>Hello world</h1>
-    </div>
+    <>
+      <Nav />
+      <Navigate />
+    </>
   );
-}
+};
 
 export default App;
